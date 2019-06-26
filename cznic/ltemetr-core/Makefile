@@ -13,7 +13,7 @@ PKG_RELEASE:=1
 
 PKG_SOURCE:=core-v$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://gitlab.labs.nic.cz/turris/ltemetr/core/-/archive/v$(PKG_VERSION)/
-PKG_HASH:=c524418f4b75b0a7978bd9fa8df3ebd04b6ee6e723f5ee714206cd01165f9b32
+PKG_HASH:=4952bec7726513684a259a932442338a74f0f1fd21c31db64da8457d794124a6
 
 PKG_MAINTAINER:=CZ.NIC <packaging@turris.cz>
 PKG_LICENSE:=GPL-2.0-or-later
