@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 CZ.NIC, z. s. p. o. (https://www.nic.cz/)
+# Copyright (C) 2017-2019 CZ.NIC, z. s. p. o. (https://www.nic.cz/)
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -8,24 +8,20 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=suricata-monitor
-PKG_VERSION:=1.0
+PKG_VERSION:=1.0.1
 PKG_RELEASE:=6
-
-PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 
 PKG_MAINTAINER:=Michal Hrusecky <michal.hrusecky@nic.cz>
 PKG_LICENSE:=GPL-3.0
 
-PKG_INSTALL:=0
-
 include $(INCLUDE_DIR)/package.mk
 
 define Package/suricata-monitor
-	SECTION:=net
-	CATEGORY:=Network
-	SUBMENU:=Collect events from suricata IDS
-	TITLE:=Suricata monitor
-	DEPENDS:=+suricata-pakon +python-bottle +python-sqlite3
+  SECTION:=net
+  CATEGORY:=Network
+  SUBMENU:=Collect events from suricata IDS
+  TITLE:=Suricata monitor
+  DEPENDS:=+suricata-pakon +python-bottle +python-sqlite3
 endef
 
 define Package/$(PKG_NAME)/description
@@ -39,11 +35,7 @@ define Package/$(PKG_NAME)/conffiles
 /etc/config/suricata-monitor
 endef
 
-define Build/Compile
-endef
-
-define Build/Install
-endef
+Build/Compile:=:
 
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/etc/suricata-pakon/output_conf.d

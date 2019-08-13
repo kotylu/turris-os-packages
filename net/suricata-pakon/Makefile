@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=suricata-pakon
 PKG_VERSION:=1
-PKG_RELEASE:=8
+PKG_RELEASE:=9
 
 PKG_LICENSE:=GPL-2.0
 PKG_INSTALL:=1
@@ -23,14 +23,9 @@ define Package/suricata-pakon
   DEPENDS:=+suricata-bin
 endef
 
-define Build/Compile
-  true
-endef
 
-define Build/Install
-  true
-endef
-
+Build/Compile:=:
+Build/Install:=:
 
 define Package/suricata-pakon/install
 	$(INSTALL_DIR) $(1)/etc/init.d
@@ -60,8 +55,8 @@ endef
 
 define Package/suricata-pakon/prerm
 #!/bin/sh
-	/etc/init.d/suricata-pakon disable
-	/etc/init.d/suricata-pakon stop
+/etc/init.d/suricata-pakon disable
+/etc/init.d/suricata-pakon stop
 endef
 
 $(eval $(call BuildPackage,suricata-pakon))
